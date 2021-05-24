@@ -59,6 +59,16 @@ defmodule Api.Models.Base do
       end
 
 
+      def findAll(filters) when is_map(filters) do
+        cursor = Mongo.find(:mongo, @db_table, filters)
+        case cursor |> Enum.to_list do
+          [] ->
+            {:error, []}
+          saved_docs ->
+            {:ok, saved_docs |> Enum.map(&(merge_to_struct(MapHelper.string_keys_to_atoms(&1))))}
+        end
+      end
+
       def delete(id) do
         {:ok, res} = Mongo.delete_one(:mongo, @db_table, %{id: id})
 

@@ -24,11 +24,16 @@ defmodule Endpoints.SymptomEndpoint do
   get "/", private: %{view: SymptomView}  do
     params = Map.get(conn.params, "filter", %{})
 
-    {_, bands} =  Symptom.find(params)
-
-    conn
-    |> put_status(200)
-    |> assign(:jsonapi, bands)
+    case Symptom.findAll(params) do
+      {:ok, symptoms} ->
+        conn
+        |> put_status(200)
+        |> assign(:jsonapi, symptoms)
+      {:error, []} ->
+        conn
+        |> put_status(200)
+        |> assign(:jsonapi, [])
+    end
   end
 
   post "/", private: %{view: SymptomView} do

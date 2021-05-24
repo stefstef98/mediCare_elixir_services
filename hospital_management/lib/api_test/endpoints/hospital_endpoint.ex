@@ -24,11 +24,16 @@ defmodule Endpoints.HospitalEndpoint do
   get "/", private: %{view: HospitalView}  do
     params = Map.get(conn.params, "filter", %{})
 
-    {_, bands} =  Hospital.find(params)
-
-    conn
-    |> put_status(200)
-    |> assign(:jsonapi, bands)
+    case Hospital.findAll(params) do
+      {:ok, hospitals} ->
+        conn
+        |> put_status(200)
+        |> assign(:jsonapi, hospitals)
+      {:error, []} ->
+        conn
+        |> put_status(200)
+        |> assign(:jsonapi, [])
+    end
   end
 
   post "/", private: %{view: HospitalView} do

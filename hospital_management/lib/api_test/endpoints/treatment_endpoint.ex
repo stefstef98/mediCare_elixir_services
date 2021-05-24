@@ -26,11 +26,16 @@ defmodule Endpoints.TreatmentEndpoint do
   get "/", private: %{view: TreatmentView}  do
     params = Map.get(conn.params, "filter", %{})
 
-    {_, bands} =  Treatment.find(params)
-
-    conn
-    |> put_status(200)
-    |> assign(:jsonapi, bands)
+    case Treatment.findAll(params) do
+      {:ok, treatments} ->
+        conn
+        |> put_status(200)
+        |> assign(:jsonapi, treatments)
+      {:error, []} ->
+        conn
+        |> put_status(200)
+        |> assign(:jsonapi, [])
+    end
   end
 
   post "/", private: %{view: TreatmentView} do
@@ -121,14 +126,15 @@ defmodule Endpoints.TreatmentEndpoint do
     }
 
     case Treatment.delete(id) do
-      :error ->
-         conn
-         |> put_status(404)
-         |> assign(:jsonapi, %{"error" => "'band' not found"})
-      :ok ->
+      {:ok, _posting} ->
         conn
         |> put_status(200)
-        |> assign(:jsonapi, %{message: " was deleted"})
+        |> assign(:jsonapi, %{body: "Posting was successfully deleted."})
+
+      :error ->
+        conn
+        |> put_status(404)
+        |> assign(:jsonapi, %{body: "Posting with the given id was not found."})
     end
   end
 end
