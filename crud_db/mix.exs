@@ -31,7 +31,8 @@ defmodule ApiTest.MixProject do
       {:mongodb, "~> 0.5.1"},
       {:joken, "~> 2.0"},
       {:timex, "~> 3.7.3"},
-      {:pbkdf2_elixir, "~> 1.4"}
+      {:pbkdf2_elixir, "~> 1.4"},
+      {:amqp, "~> 2.1"}
     ]
   end
 end

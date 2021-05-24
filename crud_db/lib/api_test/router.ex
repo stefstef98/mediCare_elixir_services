@@ -4,6 +4,10 @@ defmodule Api.Router do
   alias Api.Models.User
   alias Api.Views.UserView
   alias Api.Plugs.JsonTestPlug
+  alias Api.Service.Publisher
+
+  @routing_keys Application.get_env(:api_test, :routing_keys)
+
 
 
   @api_port Application.get_env(:api_test, :api_port)
@@ -113,6 +117,10 @@ defmodule Api.Router do
             uri = "#{@api_scheme}://#{@api_host}:#{@api_port}#{conn.request_path}/"
             #not optimal
 
+            Publisher.publish(
+            @routing_keys |> Map.get("user_register"),
+            %{:name => name})
+            
             conn
             |> put_resp_header("location", "#{uri}#{id}")
             |> put_status(201)
@@ -157,6 +165,10 @@ defmodule Api.Router do
             {:ok, service} = Api.Service.Auth.start_link
             token = Api.Service.Auth.issue_token(service, %{:name => name})
 
+          Publisher.publish(
+            @routing_keys |> Map.get("user_login"),
+            %{:name => name})
+            
             conn
             |> put_status(200)
             |> assign(:jsonapi, %{:token => token})
@@ -182,6 +194,11 @@ defmodule Api.Router do
 
     case Api.Service.Auth.revoke_token(service, %{:name => name}) do
       :ok ->
+
+        Publisher.publish(
+            @routing_keys |> Map.get("user_logout"),
+            %{:name => name})
+
         conn
         |> put_status(200)
         |> assign(:jsonapi, %{"message" => "logged out: #{name}, token deleted"})
