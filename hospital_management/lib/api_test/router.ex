@@ -124,6 +124,7 @@ defmodule Api.Router do
   forward("/treatment", to: Endpoints.TreatmentEndpoint)
   forward("/symptom", to: Endpoints.SymptomEndpoint)
   forward("/hospital", to: Endpoints.HospitalEndpoint)
+  forward("/feedback", to: Endpoints.FeedbackEndpoint)
 
   match _ do
     conn
