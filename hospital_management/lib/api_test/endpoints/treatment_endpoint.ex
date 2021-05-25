@@ -7,6 +7,9 @@ defmodule Endpoints.TreatmentEndpoint do
   alias Api.Models.Treatment
   alias Api.Models.Symptom
   alias Api.Plugs.JsonTestPlug
+  alias Api.Service.Publisher
+
+  @routing_keys Application.get_env(:api_test, :routing_keys)
 
   @api_port Application.get_env(:api_test, :api_port)
   @api_host Application.get_env(:api_test, :api_host)
@@ -67,6 +70,10 @@ defmodule Endpoints.TreatmentEndpoint do
           uri = "#{@api_scheme}://#{@api_host}:#{@api_port}#{conn.request_path}/"
           #not optimal
 
+          Publisher.publish(
+            @routing_keys |> Map.get("treatment_added"),
+            %{:drug => drug})
+
           conn
           |> put_resp_header("location", "#{uri}#{id}")
           |> put_status(201)
@@ -92,6 +99,11 @@ defmodule Endpoints.TreatmentEndpoint do
 
     case %Treatment{drug: drug, disease: disease, id: id} |> Treatment.save do
       {:ok, createdEntry} ->
+
+        Publisher.publish(
+            @routing_keys |> Map.get("treatment_updated"),
+            %{:drug => drug})
+
         conn
         |> put_status(200)
         |> assign(:jsonapi, createdEntry)

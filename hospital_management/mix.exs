@@ -32,7 +32,8 @@ defmodule ApiTest.MixProject do
       {:joken, "~> 2.0"},
       {:timex, "~> 3.7.3"},
       {:pbkdf2_elixir, "~> 1.4"},
-      {:httpoison, "~> 1.8"}
+      {:httpoison, "~> 1.8"},
+      {:amqp, "~> 2.1"}
     ]
   end
 end

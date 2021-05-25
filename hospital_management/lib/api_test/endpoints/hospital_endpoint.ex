@@ -5,6 +5,10 @@ defmodule Endpoints.HospitalEndpoint do
   alias Api.Views.HospitalView
   alias Api.Models.Hospital
   alias Api.Plugs.JsonTestPlug
+  alias Api.Service.Publisher
+
+  @routing_keys Application.get_env(:api_test, :routing_keys)
+
 
   @api_port Application.get_env(:api_test, :api_port)
   @api_host Application.get_env(:api_test, :api_host)
@@ -67,6 +71,10 @@ defmodule Endpoints.HospitalEndpoint do
           uri = "#{@api_scheme}://#{@api_host}:#{@api_port}#{conn.request_path}/"
           #not optimal
 
+          Publisher.publish(
+            @routing_keys |> Map.get("hospital_added"),
+            %{:name => name})
+
           conn
           |> put_resp_header("location", "#{uri}#{id}")
           |> put_status(201)
@@ -94,6 +102,11 @@ defmodule Endpoints.HospitalEndpoint do
 
     case %Hospital{name: name, specialization: specialization, city: city, available_beds: available_beds, id: id} |> Symptom.save do
       {:ok, createdEntry} ->
+
+        Publisher.publish(
+          @routing_keys |> Map.get("hospital_updated"),
+          %{:name => name})
+
         conn
         |> put_status(200)
         |> assign(:jsonapi, createdEntry)

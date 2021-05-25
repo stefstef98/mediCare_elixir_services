@@ -120,7 +120,7 @@ defmodule Api.Router do
             Publisher.publish(
             @routing_keys |> Map.get("user_register"),
             %{:name => name})
-            
+
             conn
             |> put_resp_header("location", "#{uri}#{id}")
             |> put_status(201)
@@ -168,7 +168,7 @@ defmodule Api.Router do
           Publisher.publish(
             @routing_keys |> Map.get("user_login"),
             %{:name => name})
-            
+
             conn
             |> put_status(200)
             |> assign(:jsonapi, %{:token => token})

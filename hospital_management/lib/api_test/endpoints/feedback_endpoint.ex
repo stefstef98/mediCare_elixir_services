@@ -5,6 +5,10 @@ defmodule Endpoints.FeedbackEndpoint do
   alias Api.Views.FeedbackView
   alias Api.Models.Feedback
   alias Api.Plugs.JsonTestPlug
+  alias Api.Service.Publisher
+
+  @routing_keys Application.get_env(:api_test, :routing_keys)
+
 
   @api_port Application.get_env(:api_test, :api_port)
   @api_host Application.get_env(:api_test, :api_host)
@@ -66,6 +70,10 @@ defmodule Endpoints.FeedbackEndpoint do
           uri = "#{@api_scheme}://#{@api_host}:#{@api_port}#{conn.request_path}/"
           #not optimal
 
+          Publisher.publish(
+            @routing_keys |> Map.get("feedback_added"),
+            %{:text => text})
+
           conn
           |> put_resp_header("location", "#{uri}#{id}")
           |> put_status(201)
@@ -91,6 +99,11 @@ defmodule Endpoints.FeedbackEndpoint do
 
     case %Feedback{rating: rating, text: text, id: id} |> Feedback.save do
       {:ok, createdEntry} ->
+
+        Publisher.publish(
+          @routing_keys |> Map.get("feedback_updated"),
+          %{:text => text})
+
         conn
         |> put_status(200)
         |> assign(:jsonapi, createdEntry)
