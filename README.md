@@ -1,6 +1,10 @@
 # MediCare Elixir Services
 
-Hospital management app, developed in Elixir, where users can manage their treatments, appointments, feedbacks. 
+Hospital management app, developed in Elixir, where users can manage their treatments, appointments, feedbacks.
+
+# Arhitecture
+
+![Arhitecture]("arhitecture/mediCare_elixir_diagram.jpg") 
 
 **TODO: Add description**
 
