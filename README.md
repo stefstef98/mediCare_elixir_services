@@ -4,7 +4,7 @@ Hospital management app, developed in Elixir, where users can manage their treat
 
 # Arhitecture
 
-![Arhitecture]("arhitecture/mediCare_elixir_diagram.jpg") 
+![Arhitecture](arhitecture/mediCare_elixir_diagram.jpg) 
 
 **TODO: Add description**
 
