@@ -4,6 +4,7 @@ defmodule Endpoints.FeedbackEndpoint do
 
   alias Api.Views.FeedbackView
   alias Api.Models.Feedback
+  alias Api.Models.JwtToken
   alias Api.Plugs.JsonTestPlug
   alias Api.Service.Publisher
 
@@ -13,6 +14,7 @@ defmodule Endpoints.FeedbackEndpoint do
   @api_port Application.get_env(:api_test, :api_port)
   @api_host Application.get_env(:api_test, :api_host)
   @api_scheme Application.get_env(:api_test, :api_scheme)
+  @token_verification 'http://localhost:4000/tokeninfo'
 
   plug :match
   plug :dispatch
@@ -26,17 +28,36 @@ defmodule Endpoints.FeedbackEndpoint do
   end
 
   get "/", private: %{view: FeedbackView}  do
-    params = Map.get(conn.params, "filter", %{})
+    headers = get_req_header(conn, "authorization")
+    header = [{"Content-type", "application/json"}]
+    case headers do
+      ["Bearer " <> token] ->
+        body = Poison.encode!(%JwtToken{jwt: token})
+        case HTTPoison.post(@token_verification, body, header) do
+          {_, response} ->
+            cond do
+              response.status_code == 200 ->
 
-    case Feedback.findAll(params) do
-      {:ok, feedbacks} ->
-        conn
-        |> put_status(200)
-        |> assign(:jsonapi, feedbacks)
-      {:error, []} ->
-        conn
-        |> put_status(200)
-        |> assign(:jsonapi, [])
+              params = Map.get(conn.params, "filter", %{})
+
+              case Feedback.findAll(params) do
+                {:ok, feedbacks} ->
+                  conn
+                  |> put_status(200)
+                  |> assign(:jsonapi, feedbacks)
+                {:error, []} ->
+                  conn
+                  |> put_status(200)
+                  |> assign(:jsonapi, [])
+              end
+              response.status_code == 400 -> conn
+                                             |> put_status(400)
+                                             |> assign(
+                                                  :jsonapi,
+                                                  %{body: "Token is invalid!"}
+                                                )
+            end
+        end
     end
   end
 

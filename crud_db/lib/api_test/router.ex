@@ -212,6 +212,7 @@ defmodule Api.Router do
 
 
   forward("/bands", to: Api.Endpoint)
+  forward("/tokeninfo", to: Api.TokenValidation)
 
   match _ do
     conn

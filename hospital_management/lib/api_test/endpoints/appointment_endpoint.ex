@@ -1,9 +1,9 @@
-defmodule Endpoints.HospitalEndpoint do
+defmodule Endpoints.AppointmentEndpoint do
   use Plug.Router
 
 
-  alias Api.Views.HospitalView
-  alias Api.Models.Hospital
+  alias Api.Views.AppointmentView
+  alias Api.Models.Appointment
   alias Api.Models.JwtToken
   alias Api.Plugs.JsonTestPlug
   alias Api.Service.Publisher
@@ -27,7 +27,8 @@ defmodule Endpoints.HospitalEndpoint do
     |>send_resp(conn.status, conn.assigns |> Map.get(:jsonapi, %{}) |> Poison.encode!)
   end
 
-  get "/", private: %{view: HospitalView}  do
+  get "/", private: %{view: AppointmentView}  do
+
     headers = get_req_header(conn, "authorization")
     header = [{"Content-type", "application/json"}]
     case headers do
@@ -37,14 +38,13 @@ defmodule Endpoints.HospitalEndpoint do
           {_, response} ->
             cond do
               response.status_code == 200 ->
-
               params = Map.get(conn.params, "filter", %{})
 
-              case Hospital.findAll(params) do
-                {:ok, hospitals} ->
+              case Appointment.findAll(params) do
+                {:ok, appointments} ->
                   conn
                   |> put_status(200)
-                  |> assign(:jsonapi, hospitals)
+                  |> assign(:jsonapi, appointments)
                 {:error, []} ->
                   conn
                   |> put_status(200)
@@ -61,25 +61,30 @@ defmodule Endpoints.HospitalEndpoint do
     end
   end
 
-  post "/", private: %{view: HospitalView} do
-    {name, specialization, city, available_beds, id} = {
-      Map.get(conn.params, "name", nil),
-      Map.get(conn.params, "specialization", nil),
-      Map.get(conn.params, "city", nil),
-      Map.get(conn.params, "available_beds", nil),
+  post "/", private: %{view: AppointmentView} do
+
+    {date, patient, doctor, id} = {
+      Map.get(conn.params, "date", nil),
+      Map.get(conn.params, "patient", nil),
+      Map.get(conn.params, "doctor", nil),
       Map.get(conn.params, "id", nil)
     }
 
     cond do
-      is_nil(name) ->
+      is_nil(date) ->
         conn
         |> put_status(400)
-        |> assign(:jsonapi, %{error: "name must be present!"})
+        |> assign(:jsonapi, %{error: "date must be present!"})
 
-      is_nil(specialization) ->
+      is_nil(patient) ->
         conn
         |> put_status(400)
-        |> assign(:jsonapi, %{error: "specialization must be present!"})
+        |> assign(:jsonapi, %{error: "patient must be present!"})
+
+      is_nil(doctor) ->
+        conn
+        |> put_status(400)
+        |> assign(:jsonapi, %{error: "doctor must be present!"})
 
       is_nil(id) ->
         conn
@@ -87,14 +92,14 @@ defmodule Endpoints.HospitalEndpoint do
         |> assign(:jsonapi, %{error: "id must be present!"})
 
       true ->
-      case %Hospital{name: name, specialization: specialization, city: city, available_beds: available_beds, id: id} |> Hospital.save do
+      case %Appointment{date: date, patient: patient, doctor: doctor, id: id} |> Appointment.save do
         {:ok, createdEntry} ->
           uri = "#{@api_scheme}://#{@api_host}:#{@api_port}#{conn.request_path}/"
           #not optimal
 
           Publisher.publish(
-            @routing_keys |> Map.get("hospital_added"),
-            %{:name => name})
+            @routing_keys |> Map.get("appointment_added"),
+            %{:doctor => doctor})
 
           conn
           |> put_resp_header("location", "#{uri}#{id}")
@@ -108,25 +113,24 @@ defmodule Endpoints.HospitalEndpoint do
     end
   end
 
-  patch "/", private: %{view: HospitalView} do
+  patch "/", private: %{view: AppointmentView} do
     #not tested
 
-    {name, specialization, city, available_beds, id} = {
-      Map.get(conn.params, "name", nil),
-      Map.get(conn.params, "specialization", nil),
-      Map.get(conn.params, "city", nil),
-      Map.get(conn.params, "available_beds", nil),
+    {date, patient, doctor, id} = {
+      Map.get(conn.params, "date", nil),
+      Map.get(conn.params, "patient", nil),
+      Map.get(conn.params, "doctor", nil),
       Map.get(conn.params, "id", nil)
     }
 
-    Hospital.delete(id)
+    Appointment.delete(id)
 
-    case %Hospital{name: name, specialization: specialization, city: city, available_beds: available_beds, id: id} |> Symptom.save do
+    case %Appointment{date: date, patient: patient, doctor: doctor, id: id} |> Appointment.save do
       {:ok, createdEntry} ->
 
         Publisher.publish(
-          @routing_keys |> Map.get("hospital_updated"),
-          %{:name => name})
+          @routing_keys |> Map.get("appointment_updated"),
+          %{:doctor => doctor})
 
         conn
         |> put_status(200)
@@ -138,15 +142,15 @@ defmodule Endpoints.HospitalEndpoint do
     end
   end
 
-  get "/:id", private: %{view: HospitalView}  do
+  get "/:id", private: %{view: AppointmentView}  do
     {parsedId, ""} = Integer.parse(id)
 
-    case Hospital.get(parsedId) do
-      {:ok, hospital} ->
+    case Appointment.get(parsedId) do
+      {:ok, appointment} ->
 
         conn
         |> put_status(200)
-        |> assign(:jsonapi, hospital)
+        |> assign(:jsonapi, appointment)
 
       :error ->
         conn
@@ -157,13 +161,11 @@ defmodule Endpoints.HospitalEndpoint do
 
   delete "/" do
 
-    {parsedId} = {
-
+    {id} = {
       Map.get(conn.params, "id", nil)
-
     }
 
-    case Hospital.delete(parsedId) do
+    case Appointment.delete(id) do
       :error ->
          conn
          |> put_status(404)

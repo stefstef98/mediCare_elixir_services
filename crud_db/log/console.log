@@ -148,3 +148,257 @@
 2021-05-25 08:45:37.879 [info] <0.44.0> Application amqp started on node nonode@nohost
 2021-05-25 08:45:38.080 [warning] <0.390.0> AMQP 0-9-1 client call timeout was 60000 ms, is updated to a safe effective value of 70000 ms
 2021-05-25 08:45:38.182 [info] <0.44.0> Application api_test started on node nonode@nohost
+2021-05-27 08:20:29.149 [info] <0.44.0> Application lager started on node nonode@nohost
+2021-05-27 08:20:29.157 [info] <0.44.0> Application xmerl started on node nonode@nohost
+2021-05-27 08:20:29.170 [info] <0.44.0> Application sasl started on node nonode@nohost
+2021-05-27 08:20:29.170 [info] <0.44.0> Application tools started on node nonode@nohost
+2021-05-27 08:20:29.170 [info] <0.44.0> Application jsx started on node nonode@nohost
+2021-05-27 08:20:29.170 [info] <0.44.0> Application recon started on node nonode@nohost
+2021-05-27 08:20:29.193 [info] <0.44.0> Application credentials_obfuscation started on node nonode@nohost
+2021-05-27 08:20:29.193 [info] <0.44.0> Application rabbit_common started on node nonode@nohost
+2021-05-27 08:20:29.212 [info] <0.44.0> Application amqp_client started on node nonode@nohost
+2021-05-27 08:20:29.215 [info] <0.44.0> Application amqp started on node nonode@nohost
+2021-05-27 08:20:29.423 [warning] <0.410.0> AMQP 0-9-1 client call timeout was 60000 ms, is updated to a safe effective value of 70000 ms
+2021-05-27 08:20:29.542 [info] <0.44.0> Application api_test started on node nonode@nohost
+2021-05-27 08:21:53.141 [error] <0.550.0> CRASH REPORT Process <0.550.0> with 1 neighbours exited with reason: {{{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/D..."},...]},...]},...},...},...}
+2021-05-27 08:21:53.145 [error] <0.550.0> Cowboy stream 2 with ranch listener 'Elixir.Api.Router.HTTP' and connection process <0.546.0> had its request process exit with reason: {{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/Dow..."},...]},...]},...},...}
+2021-05-27 08:22:10.424 [error] <0.552.0> CRASH REPORT Process <0.552.0> with 1 neighbours exited with reason: {{{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/D..."},...]},...]},...},...},...}
+2021-05-27 08:22:10.425 [error] <0.552.0> Cowboy stream 3 with ranch listener 'Elixir.Api.Router.HTTP' and connection process <0.546.0> had its request process exit with reason: {{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/Dow..."},...]},...]},...},...}
+2021-05-27 08:32:29.198 [info] <0.44.0> Application lager started on node nonode@nohost
+2021-05-27 08:32:29.205 [info] <0.44.0> Application xmerl started on node nonode@nohost
+2021-05-27 08:32:29.213 [info] <0.44.0> Application sasl started on node nonode@nohost
+2021-05-27 08:32:29.214 [info] <0.44.0> Application tools started on node nonode@nohost
+2021-05-27 08:32:29.214 [info] <0.44.0> Application jsx started on node nonode@nohost
+2021-05-27 08:32:29.214 [info] <0.44.0> Application recon started on node nonode@nohost
+2021-05-27 08:32:29.231 [info] <0.44.0> Application credentials_obfuscation started on node nonode@nohost
+2021-05-27 08:32:29.231 [info] <0.44.0> Application rabbit_common started on node nonode@nohost
+2021-05-27 08:32:29.249 [info] <0.44.0> Application amqp_client started on node nonode@nohost
+2021-05-27 08:32:29.251 [info] <0.44.0> Application amqp started on node nonode@nohost
+2021-05-27 08:32:29.449 [warning] <0.390.0> AMQP 0-9-1 client call timeout was 60000 ms, is updated to a safe effective value of 70000 ms
+2021-05-27 08:32:29.539 [info] <0.44.0> Application api_test started on node nonode@nohost
+2021-05-27 08:33:33.773 [error] <0.525.0> CRASH REPORT Process <0.525.0> with 1 neighbours exited with reason: {{{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/D..."},...]},...]},...},...},...}
+2021-05-27 08:33:33.777 [error] <0.525.0> Cowboy stream 2 with ranch listener 'Elixir.Api.Router.HTTP' and connection process <0.521.0> had its request process exit with reason: {{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/Dow..."},...]},...]},...},...}
+2021-05-27 08:34:18.753 [error] <0.527.0> CRASH REPORT Process <0.527.0> with 1 neighbours exited with reason: {{{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/D..."},...]},...]},...},...},...}
+2021-05-27 08:34:18.753 [error] <0.527.0> Cowboy stream 3 with ranch listener 'Elixir.Api.Router.HTTP' and connection process <0.521.0> had its request process exit with reason: {{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/Dow..."},...]},...]},...},...}
+2021-05-27 08:37:45.168 [info] <0.44.0> Application lager started on node nonode@nohost
+2021-05-27 08:37:45.175 [info] <0.44.0> Application xmerl started on node nonode@nohost
+2021-05-27 08:37:45.184 [info] <0.44.0> Application sasl started on node nonode@nohost
+2021-05-27 08:37:45.184 [info] <0.44.0> Application tools started on node nonode@nohost
+2021-05-27 08:37:45.184 [info] <0.44.0> Application jsx started on node nonode@nohost
+2021-05-27 08:37:45.185 [info] <0.44.0> Application recon started on node nonode@nohost
+2021-05-27 08:37:45.200 [info] <0.44.0> Application credentials_obfuscation started on node nonode@nohost
+2021-05-27 08:37:45.200 [info] <0.44.0> Application rabbit_common started on node nonode@nohost
+2021-05-27 08:37:45.213 [info] <0.44.0> Application amqp_client started on node nonode@nohost
+2021-05-27 08:37:45.215 [info] <0.44.0> Application amqp started on node nonode@nohost
+2021-05-27 08:37:45.415 [warning] <0.390.0> AMQP 0-9-1 client call timeout was 60000 ms, is updated to a safe effective value of 70000 ms
+2021-05-27 08:37:45.525 [info] <0.44.0> Application api_test started on node nonode@nohost
+2021-05-27 08:38:39.199 [error] <0.525.0> CRASH REPORT Process <0.525.0> with 1 neighbours exited with reason: {{{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/D..."},...]},...]},...},...},...}
+2021-05-27 08:38:39.203 [error] <0.525.0> Cowboy stream 2 with ranch listener 'Elixir.Api.Router.HTTP' and connection process <0.521.0> had its request process exit with reason: {{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/Dow..."},...]},...]},...},...}
+2021-05-27 08:39:15.854 [info] <0.44.0> Application lager started on node nonode@nohost
+2021-05-27 08:39:15.859 [info] <0.44.0> Application xmerl started on node nonode@nohost
+2021-05-27 08:39:15.867 [info] <0.44.0> Application sasl started on node nonode@nohost
+2021-05-27 08:39:15.867 [info] <0.44.0> Application tools started on node nonode@nohost
+2021-05-27 08:39:15.867 [info] <0.44.0> Application jsx started on node nonode@nohost
+2021-05-27 08:39:15.867 [info] <0.44.0> Application recon started on node nonode@nohost
+2021-05-27 08:39:15.882 [info] <0.44.0> Application credentials_obfuscation started on node nonode@nohost
+2021-05-27 08:39:15.883 [info] <0.44.0> Application rabbit_common started on node nonode@nohost
+2021-05-27 08:39:15.896 [info] <0.44.0> Application amqp_client started on node nonode@nohost
+2021-05-27 08:39:15.898 [info] <0.44.0> Application amqp started on node nonode@nohost
+2021-05-27 08:39:16.069 [warning] <0.390.0> AMQP 0-9-1 client call timeout was 60000 ms, is updated to a safe effective value of 70000 ms
+2021-05-27 08:39:16.175 [info] <0.44.0> Application api_test started on node nonode@nohost
+2021-05-27 08:47:44.745 [info] <0.44.0> Application lager started on node nonode@nohost
+2021-05-27 08:47:44.753 [info] <0.44.0> Application xmerl started on node nonode@nohost
+2021-05-27 08:47:44.763 [info] <0.44.0> Application sasl started on node nonode@nohost
+2021-05-27 08:47:44.764 [info] <0.44.0> Application tools started on node nonode@nohost
+2021-05-27 08:47:44.764 [info] <0.44.0> Application jsx started on node nonode@nohost
+2021-05-27 08:47:44.764 [info] <0.44.0> Application recon started on node nonode@nohost
+2021-05-27 08:47:44.782 [info] <0.44.0> Application credentials_obfuscation started on node nonode@nohost
+2021-05-27 08:47:44.782 [info] <0.44.0> Application rabbit_common started on node nonode@nohost
+2021-05-27 08:47:44.797 [info] <0.44.0> Application amqp_client started on node nonode@nohost
+2021-05-27 08:47:44.800 [info] <0.44.0> Application amqp started on node nonode@nohost
+2021-05-27 08:47:45.004 [warning] <0.390.0> AMQP 0-9-1 client call timeout was 60000 ms, is updated to a safe effective value of 70000 ms
+2021-05-27 08:47:45.119 [info] <0.44.0> Application api_test started on node nonode@nohost
+2021-05-27 11:12:29.229 [info] <0.44.0> Application lager started on node nonode@nohost
+2021-05-27 11:12:29.236 [info] <0.44.0> Application xmerl started on node nonode@nohost
+2021-05-27 11:12:29.245 [info] <0.44.0> Application sasl started on node nonode@nohost
+2021-05-27 11:12:29.245 [info] <0.44.0> Application tools started on node nonode@nohost
+2021-05-27 11:12:29.245 [info] <0.44.0> Application jsx started on node nonode@nohost
+2021-05-27 11:12:29.245 [info] <0.44.0> Application recon started on node nonode@nohost
+2021-05-27 11:12:29.261 [info] <0.44.0> Application credentials_obfuscation started on node nonode@nohost
+2021-05-27 11:12:29.261 [info] <0.44.0> Application rabbit_common started on node nonode@nohost
+2021-05-27 11:12:29.275 [info] <0.44.0> Application amqp_client started on node nonode@nohost
+2021-05-27 11:12:29.277 [info] <0.44.0> Application amqp started on node nonode@nohost
+2021-05-27 11:12:29.458 [warning] <0.390.0> AMQP 0-9-1 client call timeout was 60000 ms, is updated to a safe effective value of 70000 ms
+2021-05-27 11:12:29.567 [info] <0.44.0> Application api_test started on node nonode@nohost
+2021-05-27 11:18:17.962 [info] <0.44.0> Application lager started on node nonode@nohost
+2021-05-27 11:18:17.967 [info] <0.44.0> Application xmerl started on node nonode@nohost
+2021-05-27 11:18:17.975 [info] <0.44.0> Application sasl started on node nonode@nohost
+2021-05-27 11:18:17.975 [info] <0.44.0> Application tools started on node nonode@nohost
+2021-05-27 11:18:17.975 [info] <0.44.0> Application jsx started on node nonode@nohost
+2021-05-27 11:18:17.975 [info] <0.44.0> Application recon started on node nonode@nohost
+2021-05-27 11:18:17.988 [info] <0.44.0> Application credentials_obfuscation started on node nonode@nohost
+2021-05-27 11:18:17.988 [info] <0.44.0> Application rabbit_common started on node nonode@nohost
+2021-05-27 11:18:18.001 [info] <0.44.0> Application amqp_client started on node nonode@nohost
+2021-05-27 11:18:18.003 [info] <0.44.0> Application amqp started on node nonode@nohost
+2021-05-27 11:18:18.170 [warning] <0.390.0> AMQP 0-9-1 client call timeout was 60000 ms, is updated to a safe effective value of 70000 ms
+2021-05-27 11:18:18.280 [info] <0.44.0> Application api_test started on node nonode@nohost
+2021-05-27 11:20:39.375 [info] <0.44.0> Application lager started on node nonode@nohost
+2021-05-27 11:20:39.381 [info] <0.44.0> Application xmerl started on node nonode@nohost
+2021-05-27 11:20:39.389 [info] <0.44.0> Application sasl started on node nonode@nohost
+2021-05-27 11:20:39.389 [info] <0.44.0> Application tools started on node nonode@nohost
+2021-05-27 11:20:39.389 [info] <0.44.0> Application jsx started on node nonode@nohost
+2021-05-27 11:20:39.390 [info] <0.44.0> Application recon started on node nonode@nohost
+2021-05-27 11:20:39.410 [info] <0.44.0> Application credentials_obfuscation started on node nonode@nohost
+2021-05-27 11:20:39.411 [info] <0.44.0> Application rabbit_common started on node nonode@nohost
+2021-05-27 11:20:39.424 [info] <0.44.0> Application amqp_client started on node nonode@nohost
+2021-05-27 11:20:39.426 [info] <0.44.0> Application amqp started on node nonode@nohost
+2021-05-27 11:20:39.614 [warning] <0.390.0> AMQP 0-9-1 client call timeout was 60000 ms, is updated to a safe effective value of 70000 ms
+2021-05-27 11:20:39.710 [info] <0.44.0> Application api_test started on node nonode@nohost
+2021-05-27 11:23:15.782 [info] <0.44.0> Application lager started on node nonode@nohost
+2021-05-27 11:23:15.791 [info] <0.44.0> Application xmerl started on node nonode@nohost
+2021-05-27 11:23:15.800 [info] <0.44.0> Application sasl started on node nonode@nohost
+2021-05-27 11:23:15.800 [info] <0.44.0> Application tools started on node nonode@nohost
+2021-05-27 11:23:15.801 [info] <0.44.0> Application jsx started on node nonode@nohost
+2021-05-27 11:23:15.801 [info] <0.44.0> Application recon started on node nonode@nohost
+2021-05-27 11:23:15.816 [info] <0.44.0> Application credentials_obfuscation started on node nonode@nohost
+2021-05-27 11:23:15.816 [info] <0.44.0> Application rabbit_common started on node nonode@nohost
+2021-05-27 11:23:15.829 [info] <0.44.0> Application amqp_client started on node nonode@nohost
+2021-05-27 11:23:15.831 [info] <0.44.0> Application amqp started on node nonode@nohost
+2021-05-27 11:23:16.012 [warning] <0.390.0> AMQP 0-9-1 client call timeout was 60000 ms, is updated to a safe effective value of 70000 ms
+2021-05-27 11:23:16.115 [info] <0.44.0> Application api_test started on node nonode@nohost
+2021-05-27 11:37:51.899 [info] <0.44.0> Application lager started on node nonode@nohost
+2021-05-27 11:37:51.904 [info] <0.44.0> Application xmerl started on node nonode@nohost
+2021-05-27 11:37:51.912 [info] <0.44.0> Application sasl started on node nonode@nohost
+2021-05-27 11:37:51.912 [info] <0.44.0> Application tools started on node nonode@nohost
+2021-05-27 11:37:51.912 [info] <0.44.0> Application jsx started on node nonode@nohost
+2021-05-27 11:37:51.912 [info] <0.44.0> Application recon started on node nonode@nohost
+2021-05-27 11:37:51.927 [info] <0.44.0> Application credentials_obfuscation started on node nonode@nohost
+2021-05-27 11:37:51.927 [info] <0.44.0> Application rabbit_common started on node nonode@nohost
+2021-05-27 11:37:51.939 [info] <0.44.0> Application amqp_client started on node nonode@nohost
+2021-05-27 11:37:51.941 [info] <0.44.0> Application amqp started on node nonode@nohost
+2021-05-27 11:37:52.125 [warning] <0.390.0> AMQP 0-9-1 client call timeout was 60000 ms, is updated to a safe effective value of 70000 ms
+2021-05-27 11:37:52.225 [info] <0.44.0> Application api_test started on node nonode@nohost
+2021-05-27 11:49:20.097 [info] <0.44.0> Application lager started on node nonode@nohost
+2021-05-27 11:49:20.103 [info] <0.44.0> Application xmerl started on node nonode@nohost
+2021-05-27 11:49:20.111 [info] <0.44.0> Application sasl started on node nonode@nohost
+2021-05-27 11:49:20.111 [info] <0.44.0> Application tools started on node nonode@nohost
+2021-05-27 11:49:20.111 [info] <0.44.0> Application jsx started on node nonode@nohost
+2021-05-27 11:49:20.111 [info] <0.44.0> Application recon started on node nonode@nohost
+2021-05-27 11:49:20.125 [info] <0.44.0> Application credentials_obfuscation started on node nonode@nohost
+2021-05-27 11:49:20.125 [info] <0.44.0> Application rabbit_common started on node nonode@nohost
+2021-05-27 11:49:20.137 [info] <0.44.0> Application amqp_client started on node nonode@nohost
+2021-05-27 11:49:20.139 [info] <0.44.0> Application amqp started on node nonode@nohost
+2021-05-27 11:49:20.309 [warning] <0.390.0> AMQP 0-9-1 client call timeout was 60000 ms, is updated to a safe effective value of 70000 ms
+2021-05-27 11:49:20.406 [info] <0.44.0> Application api_test started on node nonode@nohost
+2021-05-27 12:01:49.665 [info] <0.44.0> Application lager started on node nonode@nohost
+2021-05-27 12:01:49.671 [info] <0.44.0> Application xmerl started on node nonode@nohost
+2021-05-27 12:01:49.680 [info] <0.44.0> Application sasl started on node nonode@nohost
+2021-05-27 12:01:49.680 [info] <0.44.0> Application tools started on node nonode@nohost
+2021-05-27 12:01:49.680 [info] <0.44.0> Application jsx started on node nonode@nohost
+2021-05-27 12:01:49.680 [info] <0.44.0> Application recon started on node nonode@nohost
+2021-05-27 12:01:49.696 [info] <0.44.0> Application credentials_obfuscation started on node nonode@nohost
+2021-05-27 12:01:49.696 [info] <0.44.0> Application rabbit_common started on node nonode@nohost
+2021-05-27 12:01:49.708 [info] <0.44.0> Application amqp_client started on node nonode@nohost
+2021-05-27 12:01:49.710 [info] <0.44.0> Application amqp started on node nonode@nohost
+2021-05-27 12:01:49.888 [warning] <0.390.0> AMQP 0-9-1 client call timeout was 60000 ms, is updated to a safe effective value of 70000 ms
+2021-05-27 12:01:49.974 [info] <0.44.0> Application api_test started on node nonode@nohost
+2021-05-27 12:10:36.550 [info] <0.44.0> Application lager started on node nonode@nohost
+2021-05-27 12:10:36.555 [info] <0.44.0> Application xmerl started on node nonode@nohost
+2021-05-27 12:10:36.563 [info] <0.44.0> Application sasl started on node nonode@nohost
+2021-05-27 12:10:36.563 [info] <0.44.0> Application tools started on node nonode@nohost
+2021-05-27 12:10:36.563 [info] <0.44.0> Application jsx started on node nonode@nohost
+2021-05-27 12:10:36.563 [info] <0.44.0> Application recon started on node nonode@nohost
+2021-05-27 12:10:36.581 [info] <0.44.0> Application credentials_obfuscation started on node nonode@nohost
+2021-05-27 12:10:36.581 [info] <0.44.0> Application rabbit_common started on node nonode@nohost
+2021-05-27 12:10:36.606 [info] <0.44.0> Application amqp_client started on node nonode@nohost
+2021-05-27 12:10:36.609 [info] <0.44.0> Application amqp started on node nonode@nohost
+2021-05-27 12:10:36.788 [warning] <0.390.0> AMQP 0-9-1 client call timeout was 60000 ms, is updated to a safe effective value of 70000 ms
+2021-05-27 12:10:36.881 [info] <0.44.0> Application api_test started on node nonode@nohost
+2021-05-27 12:17:45.457 [error] <0.529.0> CRASH REPORT Process <0.529.0> with 1 neighbours exited with reason: {{{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/D..."},...]},...]},...},...},...}
+2021-05-27 12:17:45.461 [error] <0.529.0> Cowboy stream 1 with ranch listener 'Elixir.Api.Router.HTTP' and connection process <0.528.0> had its request process exit with reason: {{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/Dow..."},...]},...]},...},...}
+2021-05-27 12:18:18.022 [info] <0.44.0> Application lager started on node nonode@nohost
+2021-05-27 12:18:18.031 [info] <0.44.0> Application xmerl started on node nonode@nohost
+2021-05-27 12:18:18.039 [info] <0.44.0> Application sasl started on node nonode@nohost
+2021-05-27 12:18:18.039 [info] <0.44.0> Application tools started on node nonode@nohost
+2021-05-27 12:18:18.039 [info] <0.44.0> Application jsx started on node nonode@nohost
+2021-05-27 12:18:18.039 [info] <0.44.0> Application recon started on node nonode@nohost
+2021-05-27 12:18:18.055 [info] <0.44.0> Application credentials_obfuscation started on node nonode@nohost
+2021-05-27 12:18:18.055 [info] <0.44.0> Application rabbit_common started on node nonode@nohost
+2021-05-27 12:18:18.067 [info] <0.44.0> Application amqp_client started on node nonode@nohost
+2021-05-27 12:18:18.069 [info] <0.44.0> Application amqp started on node nonode@nohost
+2021-05-27 12:18:18.293 [warning] <0.390.0> AMQP 0-9-1 client call timeout was 60000 ms, is updated to a safe effective value of 70000 ms
+2021-05-27 12:18:18.385 [info] <0.44.0> Application api_test started on node nonode@nohost
+2021-05-27 12:20:29.658 [error] <0.527.0> CRASH REPORT Process <0.527.0> with 1 neighbours exited with reason: {{{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/D..."},...]},...]},...},...},...}
+2021-05-27 12:20:29.661 [error] <0.527.0> Cowboy stream 1 with ranch listener 'Elixir.Api.Router.HTTP' and connection process <0.526.0> had its request process exit with reason: {{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/Dow..."},...]},...]},...},...}
+2021-05-27 12:26:08.125 [error] <0.539.0> CRASH REPORT Process <0.539.0> with 1 neighbours exited with reason: {{{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/D..."},...]},...]},...},...},...}
+2021-05-27 12:26:08.125 [error] <0.539.0> Cowboy stream 1 with ranch listener 'Elixir.Api.Router.HTTP' and connection process <0.538.0> had its request process exit with reason: {{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/Dow..."},...]},...]},...},...}
+2021-05-27 12:26:22.965 [error] <0.542.0> CRASH REPORT Process <0.542.0> with 1 neighbours exited with reason: {{{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/D..."},...]},...]},...},...},...}
+2021-05-27 12:26:22.965 [error] <0.542.0> Cowboy stream 2 with ranch listener 'Elixir.Api.Router.HTTP' and connection process <0.538.0> had its request process exit with reason: {{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/Dow..."},...]},...]},...},...}
+2021-05-28 07:46:16.831 [info] <0.44.0> Application lager started on node nonode@nohost
+2021-05-28 07:46:16.837 [info] <0.44.0> Application xmerl started on node nonode@nohost
+2021-05-28 07:46:16.845 [info] <0.44.0> Application sasl started on node nonode@nohost
+2021-05-28 07:46:16.845 [info] <0.44.0> Application tools started on node nonode@nohost
+2021-05-28 07:46:16.845 [info] <0.44.0> Application jsx started on node nonode@nohost
+2021-05-28 07:46:16.845 [info] <0.44.0> Application recon started on node nonode@nohost
+2021-05-28 07:46:16.860 [info] <0.44.0> Application credentials_obfuscation started on node nonode@nohost
+2021-05-28 07:46:16.860 [info] <0.44.0> Application rabbit_common started on node nonode@nohost
+2021-05-28 07:46:16.873 [info] <0.44.0> Application amqp_client started on node nonode@nohost
+2021-05-28 07:46:16.875 [info] <0.44.0> Application amqp started on node nonode@nohost
+2021-05-28 07:46:17.051 [warning] <0.390.0> AMQP 0-9-1 client call timeout was 60000 ms, is updated to a safe effective value of 70000 ms
+2021-05-28 07:46:17.150 [info] <0.44.0> Application api_test started on node nonode@nohost
+2021-05-28 07:48:53.127 [error] <0.532.0> CRASH REPORT Process <0.532.0> with 1 neighbours exited with reason: {{{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/D..."},...]},...]},...},...},...}
+2021-05-28 07:48:53.130 [error] <0.532.0> Cowboy stream 1 with ranch listener 'Elixir.Api.Router.HTTP' and connection process <0.531.0> had its request process exit with reason: {{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/Dow..."},...]},...]},...},...}
+2021-05-28 07:49:16.225 [error] <0.534.0> CRASH REPORT Process <0.534.0> with 1 neighbours exited with reason: {{{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/D..."},...]},...]},...},...},...}
+2021-05-28 07:49:16.225 [error] <0.534.0> Cowboy stream 2 with ranch listener 'Elixir.Api.Router.HTTP' and connection process <0.531.0> had its request process exit with reason: {{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/Dow..."},...]},...]},...},...}
+2021-05-28 07:58:53.006 [info] <0.44.0> Application lager started on node nonode@nohost
+2021-05-28 07:58:53.016 [info] <0.44.0> Application xmerl started on node nonode@nohost
+2021-05-28 07:58:53.023 [info] <0.44.0> Application sasl started on node nonode@nohost
+2021-05-28 07:58:53.023 [info] <0.44.0> Application tools started on node nonode@nohost
+2021-05-28 07:58:53.023 [info] <0.44.0> Application jsx started on node nonode@nohost
+2021-05-28 07:58:53.023 [info] <0.44.0> Application recon started on node nonode@nohost
+2021-05-28 07:58:53.037 [info] <0.44.0> Application credentials_obfuscation started on node nonode@nohost
+2021-05-28 07:58:53.037 [info] <0.44.0> Application rabbit_common started on node nonode@nohost
+2021-05-28 07:58:53.050 [info] <0.44.0> Application amqp_client started on node nonode@nohost
+2021-05-28 07:58:53.051 [info] <0.44.0> Application amqp started on node nonode@nohost
+2021-05-28 07:58:53.231 [warning] <0.390.0> AMQP 0-9-1 client call timeout was 60000 ms, is updated to a safe effective value of 70000 ms
+2021-05-28 07:58:53.337 [info] <0.44.0> Application api_test started on node nonode@nohost
+2021-05-28 08:01:42.840 [info] <0.44.0> Application lager started on node nonode@nohost
+2021-05-28 08:01:42.846 [info] <0.44.0> Application xmerl started on node nonode@nohost
+2021-05-28 08:01:42.853 [info] <0.44.0> Application sasl started on node nonode@nohost
+2021-05-28 08:01:42.853 [info] <0.44.0> Application tools started on node nonode@nohost
+2021-05-28 08:01:42.853 [info] <0.44.0> Application jsx started on node nonode@nohost
+2021-05-28 08:01:42.853 [info] <0.44.0> Application recon started on node nonode@nohost
+2021-05-28 08:01:42.869 [info] <0.44.0> Application credentials_obfuscation started on node nonode@nohost
+2021-05-28 08:01:42.869 [info] <0.44.0> Application rabbit_common started on node nonode@nohost
+2021-05-28 08:01:42.882 [info] <0.44.0> Application amqp_client started on node nonode@nohost
+2021-05-28 08:01:42.884 [info] <0.44.0> Application amqp started on node nonode@nohost
+2021-05-28 08:01:43.065 [warning] <0.390.0> AMQP 0-9-1 client call timeout was 60000 ms, is updated to a safe effective value of 70000 ms
+2021-05-28 08:01:43.158 [info] <0.44.0> Application api_test started on node nonode@nohost
+2021-05-28 08:02:49.813 [error] <0.526.0> CRASH REPORT Process <0.526.0> with 1 neighbours exited with reason: {{{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/D..."},...]},...]},...},...},...}
+2021-05-28 08:02:49.816 [error] <0.526.0> Cowboy stream 1 with ranch listener 'Elixir.Api.Router.HTTP' and connection process <0.525.0> had its request process exit with reason: {{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/Dow..."},...]},...]},...},...}
+2021-05-28 08:03:21.579 [error] <0.528.0> CRASH REPORT Process <0.528.0> with 1 neighbours exited with reason: {{{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/D..."},...]},...]},...},...},...}
+2021-05-28 08:03:21.579 [error] <0.528.0> Cowboy stream 2 with ranch listener 'Elixir.Api.Router.HTTP' and connection process <0.525.0> had its request process exit with reason: {{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/Dow..."},...]},...]},...},...}
+2021-05-28 08:24:59.644 [info] <0.44.0> Application lager started on node nonode@nohost
+2021-05-28 08:24:59.652 [info] <0.44.0> Application xmerl started on node nonode@nohost
+2021-05-28 08:24:59.660 [info] <0.44.0> Application sasl started on node nonode@nohost
+2021-05-28 08:24:59.660 [info] <0.44.0> Application tools started on node nonode@nohost
+2021-05-28 08:24:59.660 [info] <0.44.0> Application jsx started on node nonode@nohost
+2021-05-28 08:24:59.660 [info] <0.44.0> Application recon started on node nonode@nohost
+2021-05-28 08:24:59.674 [info] <0.44.0> Application credentials_obfuscation started on node nonode@nohost
+2021-05-28 08:24:59.674 [info] <0.44.0> Application rabbit_common started on node nonode@nohost
+2021-05-28 08:24:59.686 [info] <0.44.0> Application amqp_client started on node nonode@nohost
+2021-05-28 08:24:59.688 [info] <0.44.0> Application amqp started on node nonode@nohost
+2021-05-28 08:24:59.854 [warning] <0.390.0> AMQP 0-9-1 client call timeout was 60000 ms, is updated to a safe effective value of 70000 ms
+2021-05-28 08:24:59.947 [info] <0.44.0> Application api_test started on node nonode@nohost
+2021-05-28 08:28:28.350 [error] <0.527.0> CRASH REPORT Process <0.527.0> with 1 neighbours exited with reason: {{{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/D..."},...]},...]},...},...},...}
+2021-05-28 08:28:28.353 [error] <0.527.0> Cowboy stream 1 with ranch listener 'Elixir.Api.Router.HTTP' and connection process <0.526.0> had its request process exit with reason: {{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/Dow..."},...]},...]},...},...}
+2021-05-28 08:29:13.479 [error] <0.530.0> CRASH REPORT Process <0.530.0> with 1 neighbours exited with reason: {{{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/D..."},...]},...]},...},...},...}
+2021-05-28 08:29:13.479 [error] <0.530.0> Cowboy stream 2 with ranch listener 'Elixir.Api.Router.HTTP' and connection process <0.526.0> had its request process exit with reason: {{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/Dow..."},...]},...]},...},...}
+2021-05-28 08:29:25.261 [error] <0.532.0> CRASH REPORT Process <0.532.0> with 1 neighbours exited with reason: {{{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/D..."},...]},...]},...},...},...}
+2021-05-28 08:29:25.261 [error] <0.532.0> Cowboy stream 3 with ranch listener 'Elixir.Api.Router.HTTP' and connection process <0.526.0> had its request process exit with reason: {{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/Dow..."},...]},...]},...},...}
+2021-05-28 08:30:56.402 [error] <0.541.0> CRASH REPORT Process <0.541.0> with 1 neighbours exited with reason: {{{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/D..."},...]},...]},...},...},...}
+2021-05-28 08:30:56.402 [error] <0.541.0> Cowboy stream 1 with ranch listener 'Elixir.Api.Router.HTTP' and connection process <0.540.0> had its request process exit with reason: {{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/Dow..."},...]},...]},...},...}
+2021-05-28 08:31:06.215 [error] <0.544.0> CRASH REPORT Process <0.544.0> with 1 neighbours exited with reason: {{{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/D..."},...]},...]},...},...},...}
+2021-05-28 08:31:06.215 [error] <0.544.0> Cowboy stream 2 with ranch listener 'Elixir.Api.Router.HTTP' and connection process <0.540.0> had its request process exit with reason: {{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/Dow..."},...]},...]},...},...}
+2021-05-28 08:31:22.167 [error] <0.546.0> CRASH REPORT Process <0.546.0> with 1 neighbours exited with reason: {{{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/D..."},...]},...]},...},...},...}
+2021-05-28 08:31:22.168 [error] <0.546.0> Cowboy stream 3 with ranch listener 'Elixir.Api.Router.HTTP' and connection process <0.540.0> had its request process exit with reason: {{{#{'__exception__' => true,'__struct__' => 'Elixir.Plug.Conn.AlreadySentError',message => <<"the response was already sent">>},[{'Elixir.Plug.Conn',resp,3,[{file,"lib/plug/conn.ex"},{line,583}]},{'Elixir.Plug.Conn',send_resp,3,[{file,"lib/plug/conn.ex"},{line,559}]},{'Elixir.Api.Router',plug_builder_call,2,[{file,"lib/api_test/router.ex"},{line,1}]},{'Elixir.Plug.Cowboy.Handler',init,2,[{file,"lib/plug/cowboy/handler.ex"},{line,12}]},{cowboy_handler,execute,2,[{file,"c:/Users/leluts/Dow..."},...]},...]},...},...}

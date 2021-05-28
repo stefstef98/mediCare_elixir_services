@@ -1,11 +1,9 @@
-defmodule Endpoints.TreatmentEndpoint do
+defmodule Endpoints.AppointmentEndpoint do
   use Plug.Router
 
-  alias Api.Views.TreatmentView
-  alias Api.Views.SymptomView
-  alias Api.Models.Band
-  alias Api.Models.Treatment
-  alias Api.Models.Symptom
+
+  alias Api.Views.AppointmentView
+  alias Api.Models.Appointment
   alias Api.Plugs.JsonTestPlug
 
   @api_port Application.get_env(:api_test, :api_port)
@@ -23,8 +21,8 @@ defmodule Endpoints.TreatmentEndpoint do
     |>send_resp(conn.status, conn.assigns |> Map.get(:jsonapi, %{}) |> Poison.encode!)
   end
 
-  get "/treatments"  do
-    getCategoriesUrl = "http://localhost:3000/treatment"
+  get "/appointments"  do
+    getCategoriesUrl = "http://localhost:3000/appointment"
 
     auth = get_req_header(conn, "authorization")
     headers = [{"Authorization","#{auth}"}]
@@ -47,16 +45,17 @@ defmodule Endpoints.TreatmentEndpoint do
 
   post "/" do
 
-    addUrl = "http://localhost:3000/treatment"
+    addUrl = "http://localhost:3000/appointment"
 
-    {disease, drug, id} = {
-      Map.get(conn.params, "disease", nil),
-      Map.get(conn.params, "drug", nil),
+    {date, patient, doctor, id} = {
+      Map.get(conn.params, "date", nil),
+      Map.get(conn.params, "patient", nil),
+      Map.get(conn.params, "doctor", nil),
       Map.get(conn.params, "id", nil)
     }
 
 
-    body = Poison.encode!( %Treatment{disease: disease, drug: drug, id: id})
+    body = Poison.encode!( %Appointment{date: date, patient: patient, doctor: doctor, id: id})
 
     headers = [{"Content-type", "application/json"}]
 
@@ -78,15 +77,16 @@ defmodule Endpoints.TreatmentEndpoint do
 
   patch "/" do
 
-    updateUrl="http://localhost:3000/treatment"
+    updateUrl="http://localhost:3000/appointment"
 
-    {disease, drug, id} = {
-      Map.get(conn.params, "disease", nil),
-      Map.get(conn.params, "drug", nil),
+    {date, patient, doctor, id} = {
+      Map.get(conn.params, "date", nil),
+      Map.get(conn.params, "patient", nil),
+      Map.get(conn.params, "doctor", nil),
       Map.get(conn.params, "id", nil)
     }
 
-    body = Poison.encode!( %Treatment{disease: disease, drug: drug,  id: id})
+    body = Poison.encode!( %Appointment{date: date, patient: patient, doctor: doctor,  id: id})
 
     headers = [{"Content-type", "application/json"}]
 
@@ -113,7 +113,7 @@ defmodule Endpoints.TreatmentEndpoint do
       Map.get(conn.path_params, "id", nil)
     }
 
-    deleteUrl = "http://localhost:3000/treatment"
+    deleteUrl = "http://localhost:3000/appointment"
 
     case HTTPoison.delete(deleteUrl, headers,[]) do
       {:ok, response} ->

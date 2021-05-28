@@ -24,7 +24,10 @@ defmodule Endpoints.FeedbackEndpoint do
   get "/feedbacks"  do
     getCategoriesUrl = "http://localhost:3000/feedback"
 
-    case HTTPoison.get(getCategoriesUrl) do
+    auth = get_req_header(conn, "authorization")
+    headers = [{"Authorization","#{auth}"}]
+
+    case HTTPoison.get(getCategoriesUrl, headers) do
         {:ok, response} ->
             conn
             |> put_resp_content_type("application/json")

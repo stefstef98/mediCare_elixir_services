@@ -23,7 +23,9 @@ routing_keys: %{
   "treatment_added" => "api.resource.treatment-add.events",
   "treatment_updated" => "api.resource.treatment-update.events",
   "feedback_added" => "api.resource.feedback-add.events",
-  "feedback_updated" => "api.resource.feedback-updated.events"
+  "feedback_updated" => "api.resource.feedback-updated.events",
+  "appointment_added" => "api.resource.appointment-add.events",
+  "appointment_updated" => "api.resource.appointment-updated.events"
 },
 event_url: "guest:guest@localhost", #username:passwd (here default)
 event_exchange: "my-api",

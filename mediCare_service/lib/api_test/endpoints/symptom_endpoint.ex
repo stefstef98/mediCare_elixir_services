@@ -24,7 +24,10 @@ defmodule Endpoints.SymptomEndpoint do
   get "/symptoms"  do
     getCategoriesUrl = "http://localhost:3000/symptom"
 
-    case HTTPoison.get(getCategoriesUrl) do
+    auth = get_req_header(conn, "authorization")
+    headers = [{"Authorization","#{auth}"}]
+
+    case HTTPoison.get(getCategoriesUrl, headers) do
         {:ok, response} ->
             conn
             |> put_resp_content_type("application/json")
