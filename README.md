@@ -20,6 +20,12 @@ def deps do
 end
 ```
 
+Run the following commands on all 3 services
+
+> mix deps.get, deps.compile, compile
+
+and then register, log in, send requests for the resources specified.
+
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/api_test](https://hexdocs.pm/api_test).
