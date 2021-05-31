@@ -1,0 +1,6 @@
+2021-05-31 08:43:58 =ERROR REPORT====
+** Generic server <0.4464.0> terminating
+** Last message in was {consumer_call,{'basic.deliver',<<"amq.ctag-KjPlND4RTuhL9pC9xYlf6A">>,2,true,<<"my-api">>,<<"api.login.auth-login.events">>},{amqp_msg,{'P_basic',<<"application/json">>,undefined,undefined,2,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,<<"auth_service">>,undefined},<<"{\"name\":\"utilizator1\"}">>}}
+** When Server state == {state,'Elixir.AMQP.SelectiveConsumer',#{'__struct__' => 'Elixir.AMQP.SelectiveConsumer',confirm_handler => none,consumers => #{},default_consumer => none,monitors => #{},return_handler => none,unassigned => undefined}}
+** Reason for termination == 
+** unexpected_delivery_and_no_default_consumer

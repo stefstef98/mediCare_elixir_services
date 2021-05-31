@@ -150,6 +150,7 @@ defmodule Api.Router do
   forward("/hospital", to: Endpoints.HospitalEndpoint)
   forward("/feedback", to: Endpoints.FeedbackEndpoint)
   forward("/appointment", to: Endpoints.AppointmentEndpoint)
+  forward("/events", to: Endpoints.EventEndpoint)
 
   match _ do
     conn

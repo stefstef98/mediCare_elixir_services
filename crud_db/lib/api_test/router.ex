@@ -119,7 +119,10 @@ defmodule Api.Router do
 
             Publisher.publish(
             @routing_keys |> Map.get("user_register"),
-            %{:name => name})
+            %{
+              :type => "USER_REGISTERED",
+              :details => "User with username #{name} has been registered."
+            })
 
             conn
             |> put_resp_header("location", "#{uri}#{id}")
@@ -167,7 +170,10 @@ defmodule Api.Router do
 
           Publisher.publish(
             @routing_keys |> Map.get("user_login"),
-            %{:name => name})
+            %{
+              :type => "USER_LOGGED_IN",
+              :details => "User with username #{name} logged in."
+            })
 
             conn
             |> put_status(200)
@@ -197,7 +203,10 @@ defmodule Api.Router do
 
         Publisher.publish(
             @routing_keys |> Map.get("user_logout"),
-            %{:name => name})
+            %{
+              :type => "USER_LOGGED_OUT",
+              :details => "User with username #{name} logged out."
+            })
 
         conn
         |> put_status(200)
