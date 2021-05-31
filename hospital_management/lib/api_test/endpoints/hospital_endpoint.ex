@@ -56,6 +56,10 @@ defmodule Endpoints.HospitalEndpoint do
                                                   :jsonapi,
                                                   %{body: "Token is invalid!"}
                                                 )
+              true ->
+                conn
+                |> put_status(500)
+                |> assign(:jsonapi, %{body: "Unexpected error, invalid response from tokeninfo", code: response.status_code})
             end
         end
     end
