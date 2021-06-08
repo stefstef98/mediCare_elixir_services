@@ -1,0 +1,41 @@
+.sidenav {
+  height: 100%;
+  width: 215px;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  background-image: linear-gradient(
+    #b6fff9 0%,
+    #39a19c 100%
+  );
+  overflow-x: hidden;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+/* Style the sidenav links and the dropdown button */
+a {
+  text-align: center;
+  padding: 10px 8px 6px 16px;
+  text-decoration: none;
+  /*color: indianred;*/
+  background-color: lightskyblue;
+  display: block;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid #FFFFFF;
+  border-radius: 8px;
+}
+
+.btn {
+  background-color: cornflowerblue;
+}
+
+.btn:hover {
+  background-color: #8a82cd;
+}
+
+a:hover {
+  background-color: #8a82cd;
+}
+

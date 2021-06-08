@@ -1,0 +1,38 @@
+<body>
+<div class="log-in">
+  <form [formGroup]='form' (ngSubmit)='login()' class="loginStyling">
+    <div class="form-holder">
+      <h2>MediCare</h2>
+      <span>
+        <label class="col-form-label-lg">Sign In</label>
+      </span>
+      <div class="main">
+        <label class="col-form-label">Username</label>
+        <input type='text' formControlName='username' class="input-group"/>
+
+        <p></p>
+
+        <label class="col-form-label">Password</label>
+        <input type='password' formControlName='password' class="input-group"/>
+        <div>
+          <p></p>
+          <button type='submit' [disabled]='!this.form.valid' class="myButton">
+            Login
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <button type='submit' class="myButton" (click)="moveToRegisterView()">
+    Register
+  </button>
+
+  <div *ngIf="loginError" class="alert-danger">
+    {{loginErrorMessage}}
+  </div>
+
+  <p></p>
+
+</div>
+</body>

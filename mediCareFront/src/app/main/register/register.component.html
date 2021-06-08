@@ -1,0 +1,38 @@
+<body class="background">
+<div class="log-in">
+  <form [formGroup]='form' (ngSubmit)='register()' class="loginStyling">
+    <div class="form-holder">
+      <h2>MediCare</h2>
+      <span>
+        <label class="col-form-label-lg">Register</label>
+      </span>
+      <div class="main">
+        <label class="col-form-label">Username</label>
+        <input type='text' formControlName='username' class="input-group"/>
+
+        <p></p>
+
+        <label class="col-form-label">Password</label>
+        <input type='password' formControlName='password' class="input-group"/>
+
+        <div>
+          <p></p>
+          <button type='submit' [disabled]='!this.form.valid' class="myButton">
+            Register
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <button type='submit' class="myButton" (click)="moveToLoginView()">
+    Back To Login
+  </button>
+
+  <div *ngIf="registerError" class="alert-danger">
+    {{registerErrorMessage}}
+  </div>
+
+  <p></p>
+</div>
+</body>

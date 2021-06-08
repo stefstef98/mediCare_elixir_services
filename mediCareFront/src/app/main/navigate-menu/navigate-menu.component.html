@@ -1,0 +1,26 @@
+<div class="sidenav">
+  <h2>Medi Care</h2>
+
+  <div>
+    Hello, {{storage.getUsername()}}
+  </div>
+
+  <button class="btn btn-primary btn-outline-light btn-block dropdown-toggle "
+          (click)="clickSymptomsButton()">
+    Appointments
+  </button>
+  <div *ngIf="isSymptomsButtonActive==true ">
+    <div>
+      <a (click)="viewSymptoms()">View Symptoms</a>
+    </div>
+    <div>
+      <a (click)="addSymptom()">New Symptom</a>
+    </div>
+  </div>
+
+  <button class="btn btn-primary btn-outline-light btn-block"
+          (click)="atLogout()">Log Out
+  </button>
+  <br>
+
+</div>
