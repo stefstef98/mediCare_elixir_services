@@ -17,7 +17,8 @@ defmodule Api.Router do
 
   plug(:match)
 
-  plug(Plug.Parsers,
+  plug(
+    Plug.Parsers,
     parsers: [:json],
     pass: ["application/json"],
     json_decoder: Poison
@@ -28,7 +29,12 @@ defmodule Api.Router do
 
   defp encode_response(conn, _) do
     conn
-    |>send_resp(conn.status, conn.assigns |> Map.get(:jsonapi, %{}) |> Poison.encode!)
+    |> send_resp(
+         conn.status,
+         conn.assigns
+         |> Map.get(:jsonapi, %{})
+         |> Poison.encode!
+       )
   end
 
   post "/register" do
@@ -49,31 +55,35 @@ defmodule Api.Router do
         |> put_status(400)
         |> assign(:jsonapi, %{error: "password must be present!"})
 
-      is_nil(id) ->
-        conn
-        |> put_status(400)
-        |> assign(:jsonapi, %{error: "id must be present!"})
+      #      is_nil(id) ->
+      #        conn
+      #        |> put_status(400)
+      #        |> assign(:jsonapi, %{error: "id must be present!"})
 
       true ->
-      case %User{name: name, password: password, id: id} |> User.save do
-        {:ok, createdEntry} ->
-          uri = "#{@api_scheme}://#{@api_host}:#{@api_port}#{conn.request_path}/"
-          #not optimal
+        case %User{name: name, password: password, id: id}
+             |> User.save do
+          {:ok, createdEntry} ->
+            uri = "#{@api_scheme}://#{@api_host}:#{@api_port}#{conn.request_path}/"
+            #not optimal
 
-          conn
-          |> put_resp_header("location", "#{uri}#{id}")
-          |> put_status(201)
-          |> assign(:jsonapi, createdEntry)
-        :error ->
-          conn
-           |> put_status(500)
-           |> assign(:jsonapi, %{"error" => "An unexpected error happened"})
-      end
+            conn
+            |> put_resp_header("location", "#{uri}#{id}")
+            |> put_status(201)
+            |> assign(:jsonapi, createdEntry)
+          :error ->
+            conn
+            |> put_status(500)
+            |> assign(:jsonapi, %{"error" => "An unexpected error happened"})
+        end
     end
   end
 
 
-  post "/register2", private: %{view: UserView} do
+  post "/register2",
+       private: %{
+         view: UserView
+       } do
 
     {:ok, service} = Api.Service.Auth.start_link
 
@@ -99,11 +109,11 @@ defmodule Api.Router do
         |> put_status(400)
         |> assign(:jsonapi, %{error: "password must be present!"})
 
-      is_nil(id) ->
-        IO.puts("id missing")
-        conn
-        |> put_status(400)
-        |> assign(:jsonapi, %{error: "id must be present!"})
+      #      is_nil(id) ->
+      #        IO.puts("id missing")
+      #        conn
+      #        |> put_status(400)
+      #        |> assign(:jsonapi, %{error: "id must be present!"})
 
       User.find(%{name: name}) != :error ->
         conn
@@ -112,17 +122,20 @@ defmodule Api.Router do
 
 
       true ->
-        case %User{name: name, password: password,id: id} |> User.save do
+        case %User{name: name, password: password, id: id}
+             |> User.save do
           {:ok, createdEntry} ->
             uri = "#{@api_scheme}://#{@api_host}:#{@api_port}#{conn.request_path}/"
             #not optimal
 
             Publisher.publish(
-            @routing_keys |> Map.get("user_register"),
-            %{
-              :type => "USER_REGISTERED",
-              :details => "User with username #{name} has been registered."
-            })
+              @routing_keys
+              |> Map.get("user_register"),
+              %{
+                :type => "USER_REGISTERED",
+                :details => "User with username #{name} has been registered."
+              }
+            )
 
             conn
             |> put_resp_header("location", "#{uri}#{id}")
@@ -136,60 +149,62 @@ defmodule Api.Router do
     end
   end
   post "/login" do
-   {name, password} = {
-     Map.get(conn.params, "name", nil),
-     Map.get(conn.params, "password", nil)
-   }
+    {name, password} = {
+      Map.get(conn.params, "name", nil),
+      Map.get(conn.params, "password", nil)
+    }
 
-   cond do
-    is_nil(name) ->
-      conn
-      |> put_status(400)
-      |> assign(:jsonapi, %{error: "name must be present!"})
+    cond do
+      is_nil(name) ->
+        conn
+        |> put_status(400)
+        |> assign(:jsonapi, %{error: "name must be present!"})
 
-    is_nil(password) ->
-      conn
-      |> put_status(400)
-      |> assign(:jsonapi, %{error: "password must be present!"})
+      is_nil(password) ->
+        conn
+        |> put_status(400)
+        |> assign(:jsonapi, %{error: "password must be present!"})
 
-    true ->
+      true ->
 
-      case User.find(%{name: name}) do
-        {:ok, user} ->
-          password_hash = user.password
-          {:ok, service} = Api.Service.Auth.start_link
-          cond do
-            !Api.Service.Auth.verify_hash(service, {password, password_hash}) ->
-              conn
-              |> put_status(403)
-              |> assign(:jsonapi, %{error: "password invalid!"})
-
-          true ->
+        case User.find(%{name: name}) do
+          {:ok, user} ->
+            password_hash = user.password
             {:ok, service} = Api.Service.Auth.start_link
-            token = Api.Service.Auth.issue_token(service, %{:name => name})
+            cond do
+              !Api.Service.Auth.verify_hash(service, {password, password_hash}) ->
+                conn
+                |> put_status(403)
+                |> assign(:jsonapi, %{error: "password invalid!"})
 
-          Publisher.publish(
-            @routing_keys |> Map.get("user_login"),
-            %{
-              :type => "USER_LOGGED_IN",
-              :details => "User with username #{name} logged in."
-            })
+              true ->
+                {:ok, service} = Api.Service.Auth.start_link
+                token = Api.Service.Auth.issue_token(service, %{:name => name})
 
-            conn
-            |> put_status(200)
-            |> assign(:jsonapi, %{:token => token})
+                Publisher.publish(
+                  @routing_keys
+                  |> Map.get("user_login"),
+                  %{
+                    :type => "USER_LOGGED_IN",
+                    :details => "User with username #{name} logged in."
+                  }
+                )
+
+                conn
+                |> put_status(200)
+                |> assign(:jsonapi, %{:token => token})
+              :error ->
+                conn
+                |> put_status(500)
+                |> assign(:jsonapi, %{"error" => "An unexpected error happened"})
+            end
           :error ->
             conn
-            |> put_status(500)
-            |> assign(:jsonapi, %{"error" => "An unexpected error happened"})
-          end
-        :error ->
-          conn
-          |> put_status(404)
-          |> assign(:jsonapi, %{"error" => "User not found"})
-      end
+            |> put_status(404)
+            |> assign(:jsonapi, %{"error" => "User not found"})
+        end
+    end
   end
- end
 
   post "/logout" do
     {name} = {
@@ -202,11 +217,13 @@ defmodule Api.Router do
       :ok ->
 
         Publisher.publish(
-            @routing_keys |> Map.get("user_logout"),
-            %{
-              :type => "USER_LOGGED_OUT",
-              :details => "User with username #{name} logged out."
-            })
+          @routing_keys
+          |> Map.get("user_logout"),
+          %{
+            :type => "USER_LOGGED_OUT",
+            :details => "User with username #{name} logged out."
+          }
+        )
 
         conn
         |> put_status(200)

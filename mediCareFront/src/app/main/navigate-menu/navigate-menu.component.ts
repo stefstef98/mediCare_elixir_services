@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {StorageService} from "../../services/storage/storage.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {UserService} from "../../services/user/user.service";
 
 @Component({
   selector: 'app-navigate-menu',
@@ -12,7 +13,8 @@ export class NavigateMenuComponent implements OnInit {
 
   constructor(private router: Router,
               private activatedRoute: ActivatedRoute,
-              public storage: StorageService) {
+              public storage: StorageService,
+              public userService: UserService) {
     this.isSymptomsButtonActive = false;
   }
 
@@ -33,6 +35,7 @@ export class NavigateMenuComponent implements OnInit {
 
   // TODO: Call Server logout
   atLogout() {
+    //this.userService.logoutUser()
     localStorage.setItem('instantiatedIntervalMethod', 'true');
     localStorage.clear();
     this.router.navigate(['../login']);

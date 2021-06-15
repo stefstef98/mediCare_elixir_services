@@ -1,1 +1,32 @@
-<p>symptom-create works!</p>
+<body class="background">
+<div class="log-in">
+  <form [formGroup]='form' (ngSubmit)='createSymptom()' class="loginStyling">
+    <div class="form-holder">
+      <h2>HiveMind</h2>
+      <span>
+        <label class="col-form-label-lg">Add New Symptom</label>
+      </span>
+      <div class="main">
+        <label class="col-form-label">Name</label>
+        <input type='text' formControlName='name' class="input-group"/>
+
+        <p></p>
+
+        <label class="col-form-label">Description</label>
+        <input type='text' formControlName='description' class="input-group"/>
+
+        <div>
+          <p></p>
+          <button type='submit' [disabled]='!this.form.valid' class="myButton">
+            Register
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <div *ngIf="submitError" class="alert-danger">
+    {{submitErrorMessage}}
+  </div>
+</div>
+</body>

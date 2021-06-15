@@ -35,8 +35,8 @@ export class LoginComponent implements OnInit {
         if (res !== undefined && res !== null) {
           this.loginError = false;
           this.loginErrorMessage = "";
-          this.storage.setDataInLocalStorage('id', res.id)
-          this.storage.setDataInLocalStorage('username', res.username)
+          this.storage.setDataInLocalStorage('token', res.token)
+          // this.storage.setDataInLocalStorage('username', res.username)
         }
       },
       error => {

@@ -36,10 +36,9 @@ export class RegisterComponent implements OnInit {
           this.registerError = false;
           this.registerErrorMessage = "";
 
-          this.storage.setDataInLocalStorage('id', res.id)
-          this.storage.setDataInLocalStorage('username', res.username)
+          console.log(res);
 
-          this.router.navigate(['dashboard/symptoms']);
+          this.router.navigate(['./login']);
         }
       },
       error => {

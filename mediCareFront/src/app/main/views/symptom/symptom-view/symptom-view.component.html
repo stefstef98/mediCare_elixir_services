@@ -1,1 +1,19 @@
-<p>symptom-view works!</p>
+<body>
+<div *ngIf="noSymptoms" class="alert-danger">
+  <p class="alert-danger">You have no upcoming appointments!</p>
+</div>
+<table *ngIf="!noSymptoms" class="table">
+  <thead>
+  <tr>
+    <th class="table-info" *ngFor="let head of headElements" scope="col">{{head}} </th>
+  </tr>
+  </thead>
+  <tbody class="">
+
+  <tr *ngFor="let symptom of symptoms">
+    <td>{{symptom.name}}</td>
+    <td>{{symptom.description}}</td>
+  </tr>
+  </tbody>
+</table>
+</body>
